@@ -70,6 +70,11 @@
   border: none;
   cursor: pointer;
   border-radius: 15px; /* Rounded corners */
+  transition: transform 0.3s ease-in-out;
+}
+
+.input-container button:hover {
+  transform: scale(1.1); /* Slightly enlarge the button on hover */
 }
 
 .ratings-section {
@@ -122,4 +127,9 @@
   border: none;
   cursor: pointer;
   border-radius: 10px; /* Rounded corners for the button */
+  transition: transform 0.3s ease-in-out;
+}
+
+.popup-content button:hover {
+  transform: scale(1.1); /* Slightly enlarge the button on hover */
 }

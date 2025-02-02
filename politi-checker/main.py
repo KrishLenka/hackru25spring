@@ -28,7 +28,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Set your OpenAI API Key
-OPENAI_API_KEY = "<API-KEY>"
+OPENAI_API_KEY = "<API_KEY>"
 
 # Initialize OpenAI API client
 openai.api_key = OPENAI_API_KEY
