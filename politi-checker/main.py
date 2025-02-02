@@ -28,7 +28,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Set your OpenAI API Key
-OPENAI_API_KEY = "<API_KEY>"
+OPENAI_API_KEY = "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"
 
 # Initialize OpenAI API client
 openai.api_key = OPENAI_API_KEY
@@ -90,7 +90,7 @@ def analyze_extremity(phrase: str) -> str:
                 {"role": "system", "content": "You are an expert in analyzing text extremity."},
                 {"role": "user", "content": f"Analyze the following phrase and give a numerical rating (1-10) for extremity, along with a brief explanation:\n\n{phrase}"}
             ],
-            max_tokens=100
+            max_tokens=200
         )
         return response['choices'][0]['message']['content'].strip()
     except openai.error.OpenAIError as e:
@@ -108,7 +108,7 @@ def analyze_subjectivity(phrase: str) -> str:
                 {"role": "system", "content": "You are an expert in analyzing text subjectivity."},
                 {"role": "user", "content": f"Analyze the following phrase and give a numerical rating (1-10) for subjectivity/bias, along with a brief explanation:\n\n{phrase}"}
             ],
-            max_tokens=100
+            max_tokens=200
         )
         return response['choices'][0]['message']['content'].strip()
     except openai.error.OpenAIError as e:
@@ -126,7 +126,7 @@ def analyze_accuracy(phrase: str) -> str:
                 {"role": "system", "content": "You are an expert in analyzing factual accuracy."},
                 {"role": "user", "content": f"Analyze the following phrase and give a numerical rating (1-10) for factual accuracy, along with a brief explanation:\n\n{phrase}"}
             ],
-            max_tokens=100
+            max_tokens=200
         )
         return response['choices'][0]['message']['content'].strip()
     except openai.error.OpenAIError as e:
@@ -148,7 +148,7 @@ def analyze_phrase(phrase: str) -> dict:
                 {"role": "system", "content": "You are an expert in analyzing text meaning and educational value."},
                 {"role": "user", "content": f"Provide an overall analysis of the following phrase, including what it can educate about the topic:\n\n{phrase}"}
             ],
-            max_tokens=150
+            max_tokens=200
         )
         overall_analysis = response['choices'][0]['message']['content'].strip()
 
