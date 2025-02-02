@@ -28,7 +28,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Set your OpenAI API Key
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "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"
 
 # Initialize OpenAI API client
 openai.api_key = OPENAI_API_KEY
