@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 
 
 # Set your OpenAI API Key
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "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"
 
 
 # Initialize OpenAI API client
@@ -99,7 +99,7 @@ def analyze_text_with_openai(text: str) -> dict:
        response = openai.ChatCompletion.create(
            model="gpt-3.5-turbo",  # The model you're using
            messages=[
-               {"role": "system", "content": "You are a helpful assistant."},  # You can set the system message
+               {"role": "system", "content": "You are referencing external sources to assess the credibility of political claims."},  # You can set the system message
                {"role": "user", "content": f"Analyze the following text for extremity, subjectivity, and factual accuracy:\n\n{text}"}  # The user's query
            ],
            max_tokens=150
