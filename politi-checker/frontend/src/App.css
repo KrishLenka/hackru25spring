@@ -1,0 +1,98 @@
+/* App-wide styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;  /* Align the chat box to the right */
+  align-items: center;
+  padding: 20px;
+}
+
+.chat-box-container {
+  width: 400px;
+  height: 600px;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.chat-header {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+}
+
+.messages-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-bottom: 20px;
+}
+
+.message {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message.bot {
+  justify-content: flex-start;
+}
+
+.message-text {
+  max-width: 70%;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  background-color: #3a3a3a;
+}
+
+.message.bot .message-text {
+  background-color: #4CAF50;
+}
+
+.message.user .message-text {
+  background-color: #3b3b3b;
+  color: white;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-container input {
+  width: 80%;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.input-container button {
+  padding: 10px 15px;
+  border-radius: 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.input-container button:hover {
+  background-color: #45a049;
+}
