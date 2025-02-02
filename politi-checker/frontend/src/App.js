@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./App.css"; // Ensure you import the CSS file
+import "./App.css";
 
 const App = () => {
   const [userMessage, setUserMessage] = useState("");
@@ -23,11 +23,27 @@ const App = () => {
     setUserMessage("");
 
     try {
-      const response = await axios.post("http://localhost:3000/fact-check-text", {
-        text: userMessage,
-      });
+      const response = await axios.post(
+        "http://localhost:8000/fact-check-text", // Backend API endpoint
+        { text: userMessage } // Send the user message as JSON
+      );
 
-      const botMessage = response.data.summary || "No response from the backend.";
+      // Extract relevant data from the response
+      const { summary, phrase_analysis } = response.data;
+
+      // Prepare the message to show in the chat
+      let botMessage = summary || "No summary provided.";
+      
+      // Add phrase analysis if available
+      if (phrase_analysis && phrase_analysis.length > 0) {
+        const phraseMessages = phrase_analysis
+          .map((item) => `${item.phrase}\nAnalysis: ${item.analysis}`)
+          .join("\n\n");
+
+        botMessage += `\n\nAnalysis of Phrases:\n${phraseMessages}`;
+      }
+
+      // Add the formatted bot message to the chat
       setMessages((prevMessages) => [
         ...prevMessages,
         { text: botMessage, sender: "bot" },

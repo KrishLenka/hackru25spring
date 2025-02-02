@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import openai
 import requests
@@ -6,11 +7,21 @@ from bs4 import BeautifulSoup
 import logging
 import re
 
-
-
-
 # Initialize FastAPI app
 app = FastAPI()
+
+# Allow CORS from frontend React app (localhost:3000)
+origins = [
+    "http://localhost:3000",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 # Configure logging
@@ -19,7 +30,7 @@ logger = logging.getLogger(__name__)
 
 
 # Set your OpenAI API Key
-OPENAI_API_KEY = ""
+OPENAI_API_KEY = "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"
 
 
 # Initialize OpenAI API client
