@@ -90,7 +90,7 @@ def analyze_extremity(phrase: str) -> str:
                 {"role": "system", "content": "You are an expert in analyzing text extremity."},
                 {"role": "user", "content": f"Analyze the following phrase and give a numerical rating (1-10) for extremity, along with a brief explanation:\n\n{phrase}"}
             ],
-            max_tokens=200
+            max_tokens=500
         )
         return response['choices'][0]['message']['content'].strip()
     except openai.error.OpenAIError as e:
@@ -108,7 +108,7 @@ def analyze_subjectivity(phrase: str) -> str:
                 {"role": "system", "content": "You are an expert in analyzing text subjectivity."},
                 {"role": "user", "content": f"Analyze the following phrase and give a numerical rating (1-10) for subjectivity/bias, along with a brief explanation:\n\n{phrase}"}
             ],
-            max_tokens=200
+            max_tokens=500
         )
         return response['choices'][0]['message']['content'].strip()
     except openai.error.OpenAIError as e:
@@ -126,7 +126,7 @@ def analyze_accuracy(phrase: str) -> str:
                 {"role": "system", "content": "You are an expert in analyzing factual accuracy."},
                 {"role": "user", "content": f"Analyze the following phrase and give a numerical rating (1-10) for factual accuracy, along with a brief explanation:\n\n{phrase}"}
             ],
-            max_tokens=200
+            max_tokens=500
         )
         return response['choices'][0]['message']['content'].strip()
     except openai.error.OpenAIError as e:
@@ -148,7 +148,7 @@ def analyze_phrase(phrase: str) -> dict:
                 {"role": "system", "content": "You are an expert in analyzing text meaning and educational value."},
                 {"role": "user", "content": f"Provide an overall analysis of the following phrase, including what it can educate about the topic:\n\n{phrase}"}
             ],
-            max_tokens=200
+            max_tokens=500
         )
         overall_analysis = response['choices'][0]['message']['content'].strip()
 

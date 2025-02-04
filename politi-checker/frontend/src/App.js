@@ -96,7 +96,7 @@ const App = () => {
       </div>
 
       {showPopup && (
-        <div className="popup-overlay" onClick={() => setShowPopup(false)}>
+        <div className="popup-overlay button" onClick={() => setShowPopup(false)}>
           <div className="popup-content">
             <p>{popupText}</p>
             <button onClick={() => setShowPopup(false)}>Close</button>
