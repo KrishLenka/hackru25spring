@@ -18,6 +18,7 @@ One of our primary struggles was ensuring proper communication between the front
 We are proud of our ability to turn a nuanced topic into a user-friendly platform. Politics can often feel overwhelming, especially with the complexity of biases and opinions. By breaking down these complex elements into clear, understandable analyses, we've made it easier for users to navigate political content and form informed opinions. Our intuitive, conversational interface simplifies the learning process so users of all backgorunds can engage with the material and understand all sides of the topic. 
 
 ## Demo
+<!--        [![IMAGE ALT TEXT](http://img.youtube.com/vi/x5aTKS9r0dA/0.jpg)](http://www.youtube.com/watch?v=x5aTKS9r0dA "Harmoni Health Demo")      -->
 
 ## What's next for Poli.
 Looking ahead, our vision for Poli is to evolve into a comprehensive platform for civic education and expand beyond just the US. We especially plan to bolster the educational experience by adding interactive features and personalized content that further enrich the learning experience, ensuring that users not only stay informed but also become active, critical thinkers in today’s complex political landscape.
